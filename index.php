@@ -8,28 +8,14 @@ if ( isset( $_SERVER['PATH_INFO'] ) ) {
 		$path_prefix .= '../';
 	}
 
-	if ( strpos( $_SERVER['PATH_INFO'], 'api' ) !== false ) {
-		$path_info = explode( '/', trim( $_SERVER['PATH_INFO'], '/' ) );
-
-		if ( count( $path_info ) % 2 === 0 ) {
-			for ( $i = 0; $i < count( $path_info ); $i += 2 ) {
-				$path_data[$path_info[$i]] = $path_info[$i + 1];
-			}
-		}
-
-		if ( isset( $path_data['api'] ) && $path_data['api'] == 'whoami' ) {
-			header( 'Content-Type: application/json; charset=utf-8' );
-
-			echo json_encode( [
-				'ipaddress' => $_SERVER['REMOTE_ADDR'],
-				'language' => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
-				'software' => $_SERVER['HTTP_USER_AGENT'],
-			] );
-
-			exit;
-		} else {
-			redirect_to_index();
-		}
+	if ( strpos( $_SERVER['PATH_INFO'], '/api/whoami' ) !== false ) {
+		header( 'Content-Type: application/json; charset=utf-8' );
+		echo json_encode( [
+			'ipaddress' => $_SERVER['REMOTE_ADDR'],
+			'language' => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
+			'software' => $_SERVER['HTTP_USER_AGENT'],
+		] );
+		exit;
 	} else {
 		redirect_to_index();
 	}
