@@ -60,7 +60,7 @@ function redirect_to_index() {
 
 					<h3>Example Output:</h3>
 					<p>
-						<code>{"ipaddress":"::ffff:159.20.14.100","language":"en-US,en;q=0.5","software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"}</code>
+						<code>{"ipaddress":"0.0.0.0","language":"en-US,en;q=0.5","software":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"}</code>
 					</p>
 
 					<div class="footer text-center">by <a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a> & <a href="https://www.freecodecamp.org/adam777" target="_blank">Adam</a> | <a href="https://github.com/Adam777Z/freecodecamp-project-request-header-parser-php" target="_blank">GitHub</a></div>
